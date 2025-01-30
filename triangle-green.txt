@@ -1,0 +1,18 @@
+[32mb 
+b b 
+b b b 
+b b b b 
+b b b b b 
+b b b b b b 
+b b b b b b b 
+b b b b b b b b 
+b b b b b b b b b 
+b b b b b b b b b b 
+b b b b b b b b b b b 
+b b b b b b b b b b b b 
+b b b b b b b b b b b b b 
+[0mTriangle info:
+NAME:      Ben
+HEIGHT:      13
+CHAR:      b
+FILE:      triangle-green.txt

@@ -11,3 +11,8 @@ This program simply draws a Triangle.
 ```
 $ gcc draw-triangle.c && ./a.out
 ```
+## Supported Colors:
+- Red
+- Green
+- Yellow
+- Blue

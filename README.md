@@ -7,10 +7,6 @@ This program simply draws a Triangle.
 - Save the Triangle to the File.
 - Add the Name of the Triangle.
 
-## Compile & Execute
-```
-$ gcc draw-triangle.c && ./a.out
-```
 ## Supported Colors:
 - Red
 - Green

@@ -4,26 +4,103 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="./styles.css"></head>
-<body>
-<img src="./logo.jpeg">
-<br>
-<h1>Draw Triangle in C</h1>
+<body><img src="./logo.jpeg">
+<h1>Draw-Triangle.c</h1>
 <br><br><br>
-<p>Print a triangle in your terminal.</p>
-<p>This Program provide you the easy way to fill your terminal with triangles.</p>
+<p>Print a triangle in the terminal.</p>
+<p>This Program provide you the easy way to fill your terminal with triangles. Source code is <a href="https://github.com/yonwe/Draw-Triangle/">here</a></p>
+<pre><code>
+#
+# #
+# # #
+# # # #
+# # # # #
+# # # # # #
+# # # # # # #
+# # # # # # # #
+# # # # # # # # #
+# # # # # # # # # #
+</code></pre>
 <br><br><br>
-<h1>Features</h1>
-<p>- Change the Triangle height.</p>
-<p>- Change the Triangle Character.</p>
-<p>- Change the Triangle Color.</p>
-<p>- Save the Triangle to the File.</p>
-<p>- Add the Name of the Triangle.</p>
+<h1>What can this program do?</h1>
+<div class="bold">
+<ul><li>Change the Triangle Height.</li></ul>
+<ul><li>Change the Triangle Character.</li></ul>
+<ul><li>Change the Triangle Color.</li></ul>
+<ul><li>Print the triangle information.</li></ul>
+<ul><li>Save the Triangle to the File.</li></ul>
+<ul><li>Add the Name of the Triangle.</li></ul></div>
 <br><br><br>
-<h1>Source Code</h1>
-<p>Source code is published at GitHub.</p>
-<p>You can watch the source code <a href="https://github.com/yonwe/Draw-Triangle/">here</a></p>
+<h1>Download and Compile</h1>
+<div class="bold"><p>Prerequisite</p></div>
+<ul><li>OS:Linux</li></ul>
+<ul><li>curl</li></ul>
+<ul><li>gcc</li></ul>
+<p>After making sure you installed the prerequisite, you can just run the following commands.</p>
+<p>1.Download:</p>
+<code>$ curl -sO 'https://raw.githubusercontent.com/yonwe/Draw-Triangle/refs/heads/main/draw-triangle.c'</code>
+<p>2.Compile:</p>
+<code>$ gcc draw-triangle.c</code>
 <br><br><br>
-<h1>Try</h1>
+<h1>How to use</h1>
+<p>Available Options:</p>
+<table border>
+<tr><td><strong>Option</strong></td><td><strong>Feature</strong></td></tr>
+<tr><td><code>-h height</code></td>
+<td>Specify the height of a triangle. default height is 30.</td></tr>
+<tr><td><code>-c character</code></td>
+<td>Specify the character of a triangle. default character is '#'.</td></tr>
+<tr><td><code>-t color</code></td>
+<td>Spexify the color of a triangle.</td></tr>
+<tr><td><code>-i</code></td>
+<td>Print information about the triangle.</td></tr>
+<tr><td><code>-f filename</code></td>
+<td>Specify the filename that will be saved.</td></tr>
+<tr><td><code>-n name</code></td>
+<td>Specify the name of a triangle. default name is NAME.</td></tr>
+<tr><td><code>-l</code></td>
+<td>Print a list of suppoerted colors.</td></tr>
+</table>
+<div class="bold"><p>Example:</p></div>
+<code>$ ./a.out -h 30 -c $ -t red -i</code>
+<pre><code><div class="red">
+$
+$ $
+$ $ $
+$ $ $ $
+$ $ $ $ $
+$ $ $ $ $ $
+$ $ $ $ $ $ $
+$ $ $ $ $ $ $ $
+$ $ $ $ $ $ $ $ $
+$ $ $ $ $ $ $ $ $ $
+$ $ $ $ $ $ $ $ $ $ $
+$ $ $ $ $ $ $ $ $ $ $ $
+$ $ $ $ $ $ $ $ $ $ $ $ $
+$ $ $ $ $ $ $ $ $ $ $ $ $ $
+$ $ $ $ $ $ $ $ $ $ $ $ $ $ $
+$ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $
+$ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $
+$ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $
+$ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $
+$ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $
+$ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $
+$ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $
+$ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $
+$ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $
+$ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $
+$ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $
+$ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $
+$ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $
+$ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $
+$ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $</div>
+Triangle info:
+NAME:      money
+HEIGHT:      30
+CHAR:      $
+</code></pre>
+<p>btw, supported colors:red, green, yellow, blue.</p>
+<h1>Enjoy!</h1>
 <p>You are free to run this program.</p>
 <p>Run it and Enjoy!</p>
 </body></html>

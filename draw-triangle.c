@@ -3,6 +3,7 @@
 #include <string.h>
 #include <unistd.h>
 
+/* structure for the triangle */
 typedef struct
 {
 	int HEIGHT;
@@ -14,30 +15,20 @@ typedef struct
 
 enum {false, true};
 
-const char *red = "\033[31m";	
-const char *green = "\033[32m";
-const char *yellow = "\033[33m";
-const char *blue = "\033[34m";
-const char *default_color = "\033[0m";
-
+/* set default values */
 #define HEIGHT_DEFAULT 15
 #define NAME_DEFAULT "NAME"
 #define CHR_DEFAULT '#'
 
+/* set colors */
+#define COLOR_RED "\033[31m"
+#define COLOR_GREEN "\033[32m"
+#define COLOR_YELLOW "\033[33m"
+#define COLOR_BLUE "\033[34m"
+#define COLOR_DEFAULT "\033[0m"
+
 void draw_triangle(TRIANGLE_T *triangle, FILE *fp)
 {
-	if(!triangle->HEIGHT) {
-		triangle->HEIGHT = HEIGHT_DEFAULT;
-	}
-	if(!triangle->NAME[0]) {
-		strcpy(triangle->NAME, NAME_DEFAULT);
-	}
-	if(!triangle->COLOR[0]) {	
-		strcpy(triangle->COLOR, default_color);
-	}
-	if(!triangle->CHR) {
-		triangle->CHR = CHR_DEFAULT;
-	}
 	int n = 1;
 	if(fp != NULL) fprintf(fp, "%s", triangle->COLOR);
 	printf("%s", triangle->COLOR);
@@ -54,7 +45,8 @@ void draw_triangle(TRIANGLE_T *triangle, FILE *fp)
 		if(fp != NULL) fputc('\n', fp);
 		n++;
 	}
-	printf("%s", default_color);
+	/* reset color */
+	printf("%s", COLOR_DEFAULT);
 }
 
 void print_info(TRIANGLE_T *triangle, FILE *fp)
@@ -65,7 +57,7 @@ void print_info(TRIANGLE_T *triangle, FILE *fp)
 	printf("CHAR:      %c\n", triangle->CHR); 
 	if(fp != NULL) {
 		printf("FILE:      %s\n", triangle->FILE_);
-		fprintf(fp, "%s", default_color);
+		fprintf(fp, "%s", COLOR_DEFAULT);
 		fprintf(fp, "Triangle info:\n");
 		fprintf(fp, "NAME:      %s\n", triangle->NAME); 
 		fprintf(fp, "HEIGHT:      %d\n", triangle->HEIGHT); 
@@ -77,10 +69,14 @@ void print_info(TRIANGLE_T *triangle, FILE *fp)
 int main(int argc, char *argv[])
 {
 	TRIANGLE_T triangle = {0};
-	int info = false;
+	triangle.HEIGHT = HEIGHT_DEFAULT;
+	triangle.CHR = CHR_DEFAULT;
+	strcpy(triangle.NAME, NAME_DEFAULT);
+	strcpy(triangle.COLOR, COLOR_DEFAULT);
 	FILE *fp = NULL;
+	int info = false;
 	int opt;
-	while((opt = getopt(argc, argv, "h:n:f:c:t:il")) != -1) {
+	while((opt = getopt(argc, argv, "h:n:f:c:t:il?")) != -1) {
 		switch(opt) {
 			case 'h':
 				triangle.HEIGHT = atoi(optarg);
@@ -90,13 +86,13 @@ int main(int argc, char *argv[])
 				break;
 			case 't':
 				if(!strcmp(optarg, "red"))
-					strcpy(triangle.COLOR, red);
+					strcpy(triangle.COLOR, COLOR_RED);
 				else if(!strcmp(optarg, "green"))
-					strcpy(triangle.COLOR, green);
+					strcpy(triangle.COLOR, COLOR_GREEN);
 				else if(!strcmp(optarg, "yellow"))
-					strcpy(triangle.COLOR, yellow);
+					strcpy(triangle.COLOR, COLOR_YELLOW);
 				else if(!strcmp(optarg, "blue"))
-					strcpy(triangle.COLOR, blue);
+					strcpy(triangle.COLOR, COLOR_BLUE);
 				else {
 					fprintf(stderr, "Unsupported Color:%s.\n",\
 					optarg);
@@ -117,20 +113,21 @@ int main(int argc, char *argv[])
 				break;
 			case 'f':
 				strcpy(triangle.FILE_, optarg);
+				fp = fopen(triangle.FILE_, "w+");
+				if(fp == NULL) {
+					fprintf(stderr, "Failed to open %s\n", triangle.FILE_);
+					exit(EXIT_FAILURE);
+				}
 				break;
 			case 'i':
 				info = true;
 				break;
+			case '?':
+				printf("Usage:\n%s [-h|-f|-n|-c|-C] args\n", argv[0]);
+				exit(EXIT_FAILURE);
 			default:
 				printf("Usage:\n%s [-h|-f|-n|-c|-C] args\n", argv[0]);
 				exit(EXIT_FAILURE);
-		}
-	}
-	if(triangle.FILE_[0]) {
-		fp = fopen(triangle.FILE_, "w+");
-		if(fp == NULL) {
-			fprintf(stderr, "Failed to open %s\n", triangle.FILE_);
-			return 1;
 		}
 	}
 	draw_triangle(&triangle, fp);

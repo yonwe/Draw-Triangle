@@ -1,4 +1,4 @@
-## draw-triangle
+# Draw-Triangle
 This program simply draws a Triangle.
 ## Features
 - Change the Triangle Height.

@@ -30,20 +30,22 @@ enum {false, true};
 void draw_triangle(TRIANGLE_T *triangle, FILE *fp)
 {
 	int n = 1;
+	int t = triangle->HEIGHT;
 	if(fp != NULL) fprintf(fp, "%s", triangle->COLOR);
 	printf("%s", triangle->COLOR);
 	for(int i = 0; i < triangle->HEIGHT; i++) {
-		for(int j = 0; j < n; j++) {
-			putchar(triangle->CHR);
+		for(int s = 0; s < t; s++) {
 			putchar(' ');
-			if(fp != NULL) {
-				fputc(triangle->CHR, fp);
-				fputc(' ', fp);
-			}
+			if(fp != NULL) fputc(' ', fp);
 		}
+		for(int k = 0; k < n; k++) {
+			putchar(triangle->CHR);
+			if( fp != NULL) fputc(triangle->CHR, fp);
+		}
+		t--;
+		n += 2;
 		putchar('\n');
 		if(fp != NULL) fputc('\n', fp);
-		n++;
 	}
 	/* reset color */
 	printf("%s", COLOR_DEFAULT);
@@ -123,10 +125,10 @@ int main(int argc, char *argv[])
 				info = true;
 				break;
 			case '?':
-				printf("Usage:\n%s [-h|-f|-n|-c|-C] args\n", argv[0]);
+				printf("Usage:\n%s [-h|-f|-n|-c|-C] args [-i|-l]\n", argv[0]);
 				exit(EXIT_FAILURE);
 			default:
-				printf("Usage:\n%s [-h|-f|-n|-c|-C] args\n", argv[0]);
+				printf("Usage:\n%s [-h|-f|-n|-c|-C] args [-i|-l]\n", argv[0]);
 				exit(EXIT_FAILURE);
 		}
 	}

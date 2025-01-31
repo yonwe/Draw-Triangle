@@ -1,25 +1,35 @@
-[32mb 
-b b 
-b b b 
-b b b b 
-b b b b b 
-b b b b b b 
-b b b b b b b 
-b b b b b b b b 
-b b b b b b b b b 
-b b b b b b b b b b 
-b b b b b b b b b b b 
-b b b b b b b b b b b b 
-b b b b b b b b b b b b b 
-b b b b b b b b b b b b b b 
-b b b b b b b b b b b b b b b 
-b b b b b b b b b b b b b b b b 
-b b b b b b b b b b b b b b b b b 
-b b b b b b b b b b b b b b b b b b 
-b b b b b b b b b b b b b b b b b b b 
-b b b b b b b b b b b b b b b b b b b b 
+[32m                              B
+                             BBB
+                            BBBBB
+                           BBBBBBB
+                          BBBBBBBBB
+                         BBBBBBBBBBB
+                        BBBBBBBBBBBBB
+                       BBBBBBBBBBBBBBB
+                      BBBBBBBBBBBBBBBBB
+                     BBBBBBBBBBBBBBBBBBB
+                    BBBBBBBBBBBBBBBBBBBBB
+                   BBBBBBBBBBBBBBBBBBBBBBB
+                  BBBBBBBBBBBBBBBBBBBBBBBBB
+                 BBBBBBBBBBBBBBBBBBBBBBBBBBB
+                BBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+               BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+              BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+             BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+            BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+           BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+          BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+         BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+        BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+       BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+      BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+     BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+  BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+ BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
 [0mTriangle info:
 NAME:      Ben
-HEIGHT:      20
-CHAR:      b
+HEIGHT:      30
+CHAR:      B
 FILE:      triangle-green.txt

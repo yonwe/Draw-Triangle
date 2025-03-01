@@ -7,7 +7,7 @@
 /* structure for the triangle */
 typedef struct
 {
-	int height;
+	int tall;
 	char chr;
 	int color;
 	char name[32];
@@ -19,7 +19,7 @@ enum {false, true};
 /* set default values */
 enum
 {
-	height_default = 15,
+	tall_default = 15,
 	chr_default = '#',
 };
 
@@ -39,12 +39,12 @@ enum
 void draw_triangle(TRIANGLE_T *triangle, FILE *fp)
 {
 	int n = 1;
-	int t = triangle->height;
+	int t = triangle->tall;
 	if(fp != NULL) {
 		fprintf(fp, "\033[%dm", triangle->color);
 	}
 	printf("\033[%dm", triangle->color);
-	for(int i = 0; i < triangle->height; i++) {
+	for(int i = 0; i < triangle->tall; i++) {
 		for(int s = 0; s < t; s++) {
 			putchar(' ');
 			if(fp != NULL) fputc(' ', fp);
@@ -68,7 +68,7 @@ void print_info(TRIANGLE_T *triangle, FILE *fp)
 	puts("");
 	printf("Triangle info:\n");
 	printf("name:        %s\n", triangle->name); 
-	printf("height:      %d\n", triangle->height); 
+	printf("tall:      %d\n", triangle->tall); 
 	printf("character:   %c\n", triangle->chr); 
 	if(fp != NULL) {
 		printf("file:      %s\n", triangle->filename);
@@ -78,7 +78,7 @@ void print_info(TRIANGLE_T *triangle, FILE *fp)
 
 		fprintf(fp, "Triangle info:\n");
 		fprintf(fp, "name:        %s\n", triangle->name); 
-		fprintf(fp, "height:      %d\n", triangle->height); 
+		fprintf(fp, "tall:      %d\n", triangle->tall); 
 		fprintf(fp, "character:   %c\n", triangle->chr);
 		fprintf(fp, "file:        %s\n", triangle->filename);
 	}
@@ -87,18 +87,18 @@ void print_info(TRIANGLE_T *triangle, FILE *fp)
 int main(int argc, char *argv[])
 {
 	TRIANGLE_T triangle = {0};
-	triangle.height = height_default;
+	triangle.tall = tall_default;
 	triangle.chr = chr_default;
 	triangle.color = color_default;
 	FILE *fp = NULL;
 	int info = false;
 	int opt;
-	while((opt = getopt(argc, argv, "h:n:f:c:C:ril?")) != -1) {
+	while((opt = getopt(argc, argv, "t:n:f:c:C:rilh")) != -1) {
 		switch(opt) {
-			case 'h':
-				triangle.height = atoi(optarg);
-				if(triangle.height == 0) {
-					fprintf(stderr, "error:%s: unknown height\n", \
+			case 't':
+				triangle.tall = atoi(optarg);
+				if(triangle.tall == 0) {
+					fprintf(stderr, "error:%s: unknown tall\n", \
 					optarg);
 					exit(EXIT_FAILURE);
 				}
@@ -155,18 +155,18 @@ int main(int argc, char *argv[])
 				break;
 			case 'r':
 				srand((unsigned int)time(NULL));
-				triangle.height = rand() % 50;
+				triangle.tall = rand() % 50;
 				triangle.color = 30 + (rand() % 7);
 				triangle.chr = 41 + (rand() % 38);
 				break;
 			case 'i':
 				info = true;
 				break;
-			case '?':
-				printf("Usage:\n%s [-h|-f|-n|-c|-C] args [-i|-l|-r]\n", argv[0]);
+			case 'h':
+				printf("Usage:\n%s [-t|-f|-n|-c|-C] args [-i|-l|-r|-h]\n", argv[0]);
 				exit(EXIT_FAILURE);
 			default:
-				printf("Usage:\n%s [-h|-f|-n|-c|-C] args [-i|-l|-r]\n", argv[0]);
+				printf("Usage:\n%s [-t|-f|-n|-c|-C] args [-i|-l|-r|-h]\n", argv[0]);
 				exit(EXIT_FAILURE);
 		}
 	}

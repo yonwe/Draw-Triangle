@@ -46,26 +46,28 @@
 <p>Available Options:</p>
 <table border>
 <tr><td><strong>Option</strong></td><td><strong>Feature</strong></td></tr>
-<tr><td><code>-h height</code></td>
-<td>Specify the height of a triangle. default height is 30.</td></tr>
+<tr><td><code>-t tall</code></td>
+<td>Specify the tall of a triangle. default tall is 30.</td></tr>
 <tr><td><code>-c character</code></td>
 <td>Specify the character of a triangle. default character is '#'.</td></tr>
-<tr><td><code>-t color</code></td>
+<tr><td><code>-C color</code></td>
 <td>Specify the color of a triangle.</td></tr>
 <tr><td><code>-r</code></td>
-<td>Generate random triangle.</td></tr>
+<td>Print a random triangle.</td></tr>
 <tr><td><code>-i</code></td>
 <td>Print information about the triangle.</td></tr>
 <tr><td><code>-f filename</code></td>
 <td>Specify the filename that will be saved.</td></tr>
 <tr><td><code>-n name</code></td>
-<td>Specify the name of a triangle. default name is NAME.</td></tr>
+<td>Specify the name of a triangle.</td></tr>
 <tr><td><code>-l</code></td>
 <td>Print a list of suppoerted colors.</td></tr>
+<tr><td><code>-h</code></td>
+<td>Print help.</td></tr>
 </table>
 <strong><p>Example:</p></strong>
 <pre><code>
-$ ./a.out -t red -h 30 -n money -c $ -i<div class="red">
+$ ./a.out -C red -t 30 -n mon -c $ -i<div class="red">
                               $
                              $$$
                             $$$$$
@@ -97,8 +99,8 @@ $ ./a.out -t red -h 30 -n money -c $ -i<div class="red">
   $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
  $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$</div>
 Triangle info:
-NAME:      money
-HEIGHT:      30
+NAME:      mon
+TALL:      30
 CHAR:      $
 </code></pre>
 <p>supported colors:red, green, yellow, blue, purple, cyan, white</p>
